@@ -132,6 +132,8 @@ float MixedBsdf::pdf(const SurfaceScatterEvent &event) const
 void MixedBsdf::prepareForRender()
 {
     _lobes = BsdfLobes(_bsdf0->lobes(), _bsdf1->lobes());
+    _bsdf0->prepareForRender();
+    _bsdf1->prepareForRender();
 }
 
 }
